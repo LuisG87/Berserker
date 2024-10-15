@@ -1,7 +1,8 @@
 <?php
 /**
- * Classes for PHP Language
- */
+*  Berserker
+* Classes for PHP Language
+*/
 
 class iStrings{
 
