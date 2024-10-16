@@ -1,4 +1,6 @@
+<div align="center">
 <img src="berserker.png" width="300"/>
+</div>
 <strong>ES</strong>
 <p>Este es un repositorio de prubas para clases de PHP el cual haran de interfaz con funciones de arrays, funciones de strings, funciones de filtros.</p>
 <strong>EN</strong>
