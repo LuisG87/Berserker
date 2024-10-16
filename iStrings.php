@@ -90,8 +90,6 @@ class iStrings{
     
 }
 
-class iArrays{
-}
 
-class iFilters{
+
     
