@@ -4,11 +4,12 @@
 * Classes for PHP Language
 */
 
-class iStrings{
+class bStrings{
 
     public function __construct(){
 
     }
+
     /**
      * subString
      * gives u a substring from a position with a length
@@ -66,7 +67,7 @@ class iStrings{
         return strstr($haystack, $needle, $before_needle);
     }
 
-    public static function findFirstPosition (string $haystack, string $needle, int $offset = 0): int|false{
+    public static function findFirstPosition(string $haystack, string $needle, int $offset = 0): int|false{
         return stripos($haystack, $needle, $offset);
     }
     
@@ -85,9 +86,17 @@ class iStrings{
     }
 
     public static function csvToArray(string $string, string $separator = ",", string $enclosure = "\"", string $escape = "\\"): array{
-        return str_getcsv($string,$separator,$enclosure,$escape);
+        return str_getcsv($string, $separator, $enclosure, $escape);
     }
     
+    public static function uppercase(string $string): string{
+        return strtoupper($string);
+    }
+
+    public static function lowercase(string $string): string{
+        return strtolower($string);
+    }
+
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-class iArrays{
+class bArrays{
 
 
     /**

@@ -1,4 +1,4 @@
 <?php
-require_once("iArrays.php");
-require_once("iStrings.php");
-require_once("iFilters.php");
+require_once("bArrays.php");
+require_once("bStrings.php");
+require_once("bFilters.php");
