@@ -1,4 +1,4 @@
 <?php
-require_once("bArrays.php");
-require_once("bStrings.php");
-require_once("bFilters.php");
+require_once "logicalFlags.php";
+
+berserkerImplementation(Flags::BERSERKER_IMETHOD);

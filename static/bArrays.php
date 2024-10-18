@@ -40,7 +40,7 @@ class bArrays{
     /**
      * 
      */
-    public static function keyExists(string|int|float|bool|resource|null $key, array $array): bool{
+    public static function keyExists(string|int|float|bool|null $key, array $array): bool{
         return array_key_exists($key, $array);
     }
 
