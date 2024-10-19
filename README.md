@@ -8,9 +8,9 @@
 <a href="https://blastcoding.com/en/php-berserker/">berserker Doc -blastcoding.com</a>
 
 <p><strong>Version 1.0.1-Alpha is the version supporting Composer use</strong></p>
-<pre>
+<code>
 require 'vendor/autoload.php';
 use Berserker\Berserker;
 $berserker = new Berserker();
 // you can use new Berserker() too instead of assigning berserker to a varaible
-</pre>
+</code>
