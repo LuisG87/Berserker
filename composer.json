@@ -1,0 +1,19 @@
+{
+    "name": "luisg/berserker",
+    "description": "groupes native function like array functions, string functions etc, to be use as easy as possible.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Luisg\\Berserker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luis Gomez",
+            "email": "luisg2249@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {}
+}
