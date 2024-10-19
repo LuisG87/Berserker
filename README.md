@@ -11,5 +11,6 @@
 <pre>
 require 'vendor/autoload.php';
 use Berserker\Berserker;
-$berserker = new Berserker();// you can use new Berserker() too instead of assigning berserker to a varaible
+$berserker = new Berserker();
+// you can use new Berserker() too instead of assigning berserker to a varaible
 </pre>
