@@ -101,6 +101,88 @@ class bStrings{
     public static function replace(array|string $search,array|string $replace,string|array $subject,int &$count = null): string|array{
         return str_replace($search, $replace, $subject, $count);
     }
+
+    public static function CRC32(string $string): int{
+        return crc32($string);
+    }
+    
+    public static function echo(string ...$expressions): void{
+        echo($expressions);
+    }
+
+    public static function hebrev(string $string, int $max_chars_per_line = 0): string{
+        return hebrev($string, $max_chars_per_line);
+    }
+
+    public static function hexToBin(string $string): string|false{
+        return hex2bin($string);
+    }
+    public static function lowercase1stChar(string $string): string{
+        return lcfirst($string);
+    }
+    public static function levenshtein(string $string1, string $string2, int $insertion_cost = 1, int $replacement_cost = 1, int $deletion_cost = 1): int{
+        return levenshtein($string1, $string2, $insertion_cost, $replacement_cost, $deletion_cost);
+    }
+
+
+    /**
+     *  Get numeric formatting information, locale conversion of currency symbol etc
+     * @see localeconv() native function
+     * @see setlocale() native function
+     */
+    public static function localConversion(): array{
+        return localeconv();
+    }
+
+    public static function numFormat(float $num, int $decimals = 0, ?string $decimal_separator = ".", ?string $thousands_separator = ","): string{
+        return number_format($num, $decimals, $decimal_separator, $thousands_separator);
+    }
+
+    public static function similarities(string $string1, string $string2, float &$percent = null): int{
+        return similar_text( $string1, $string2, $percent);
+    }
+
+    public static function parseWithFormat(string $string, string $format, mixed &...$vars): array|int|null{
+        return sscanf($string, $format, $vars);
+    }
+
+    public static function decrement(string $string): string{
+        return str_decrement($string);
+    }
+
+    public static function isEndedWith(string $haystack, string $needle): bool{
+        return str_ends_with($haystack, $needle);
+    }
+
+    /**
+     *  Increment an alphanumeric string, Examples A ↑ = B // A1 ↑ = A2
+     */
+    public static function increment(string $string): string{
+        return str_increment($string);
+    }
+
+    public static function isStartedWith(string $haystack, string $needle): bool{
+        return str_starts_with($haystack, $needle);
+    }
+
+    public static function stripSlashes(string $string): string{
+        return stripslashes($string);
+    }
+
+    public static function compareByNatOrd(string $str1, string $str2): int{
+        return strnatcmp($str1, $str2);
+    }
+
+    public static function compareCaseIgnore(string $string1, string $string2): int{
+        return strcasecmp($string1, $string2);
+    }
+
+    public static function compare(string $string1, string $string2): int{
+        return strcmp($string1, $string2);
+    }
+    public static function reverse(string $string): string{
+        return strrev($string);
+    }
 }
 
 

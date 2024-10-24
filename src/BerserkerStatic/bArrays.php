@@ -1,5 +1,5 @@
 <?php
-namespace BerserkerStatic;
+
 class bArrays{
 
 
@@ -48,7 +48,7 @@ class bArrays{
     /**
      * 
      */
-    public static function valueOccurrences(array $array): array{
+    public static function valuesOccurrences(array $array): array{
         return array_count_values($array);
     }
 
