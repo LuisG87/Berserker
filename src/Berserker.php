@@ -43,6 +43,7 @@ class Berserker{
             require_once("berserkerStatic/bStrings.php");
             require_once("berserkerStatic/bArrays.php");
             require_once("berserkerStatic/bFilters.php");
+            require_once("berserkerStatic/bRegex.php");
             return "static_loaded";
         }catch(Exception $e){
             return "error_static_load";
@@ -54,6 +55,7 @@ class Berserker{
             require_once("imethod/bStrings.php");
             require_once("imethod/bArrays.php");
             require_once("imethod/bFilters.php");
+            require_once("imethod/bRegex.php");
             return "imethod_loaded";
         }catch(Exception $e){
             return "error_imethod_load";
