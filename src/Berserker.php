@@ -6,6 +6,7 @@ enum Flags {
     case BERSERKER_STATIC;
     case BERSERKER_IMETHOD;
 }
+
 class Berserker{
 
     public function __construct($flag = null){       
@@ -14,14 +15,14 @@ class Berserker{
         }else{
             try{
                 $this->berserkerImplementation(Flags::BERSERKER_IMETHOD);
-            }catch(Exception $e){
+            }catch(\Exception $e){
                 die("error specifing the flag".$e);
             }
         }
     }
-    public function changeImplementation($flag){
+    /*public function changeImplementation(Flags $flag){
         $this->berserkerImplementation(Flags::$flag);
-    }
+    }*/
 
     private function berserkerImplementation(Flags $flag): void {
         $bflag = (function()use($flag){
@@ -45,7 +46,7 @@ class Berserker{
             require_once("berserkerStatic/bFilters.php");
             require_once("berserkerStatic/bRegex.php");
             return "static_loaded";
-        }catch(Exception $e){
+        }catch(\Exception $e){
             return "error_static_load";
         }
     }
@@ -57,7 +58,7 @@ class Berserker{
             require_once("imethod/bFilters.php");
             require_once("imethod/bRegex.php");
             return "imethod_loaded";
-        }catch(Exception $e){
+        }catch(\Exception $e){
             return "error_imethod_load";
         }
     }
