@@ -10,7 +10,7 @@ enum Flags {
 class Berserker{
 
     public function __construct($flag = null){       
-        if($flag==null){
+        if($flag == null){
             $this->berserkerImplementation(Flags::BERSERKER_STATIC);
         }else{
             try{
