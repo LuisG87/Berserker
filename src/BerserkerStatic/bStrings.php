@@ -121,6 +121,17 @@ class bStrings{
     }
 
     /**
+    * Join the element values ​​of an array into a string
+    * Alias of implode
+    * @param string $sepaator
+    * @param array $array
+    * @return string
+    */
+    public static function glue(string $separator, array $array): string{
+        return implode($separator, $array);
+    }
+
+    /**
      * Split a string by a string
      * @param string $separator
      * @param string $string
@@ -128,6 +139,17 @@ class bStrings{
      * @return array
      */
     public static function explode(string $separator, string $string, int $limit = PHP_INT_MAX): array{
+        return explode($separator, $string, $limit);
+    }
+    
+    /**
+     * Split a string by a string ALIAS of explode
+     * @param string $separator
+     * @param string $string
+     * @param int $limit
+     * @return array
+     */
+    public static function unglue(string $separator, string $string, int $limit = PHP_INT_MAX): array{
         return explode($separator, $string, $limit);
     }
 
