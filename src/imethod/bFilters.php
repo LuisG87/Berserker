@@ -1,6 +1,6 @@
 <?php
 
-class iFilters{
+class bFilters{
 
     public function __construct()
     {

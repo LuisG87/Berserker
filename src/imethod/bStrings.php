@@ -176,6 +176,17 @@ class bStrings{
     }
     
     /**
+     * checks if a string has that substring
+     * @param string $haystack
+     * @param string $needle
+     * @param int $offset
+     * @return bool
+     */
+    public function has(string $haystack, string $needle, int $offset = 0): bool{
+        return (bool)strpos($haystack, $needle, $offset);
+    }
+
+    /**
      * Determine if a string contains a given substring
      * @param string $haystack
      * @param string $needle

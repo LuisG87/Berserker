@@ -174,6 +174,17 @@ class bStrings{
     public static function findFirstPosition(string $haystack, string $needle, int $offset = 0): int|false{
         return stripos($haystack, $needle, $offset);
     }
+
+    /**
+     * checks if a string has that substring
+     * @param string $haystack
+     * @param string $needle
+     * @param int $offset
+     * @return bool
+     */
+    public static function has(string $haystack, string $needle, int $offset = 0): bool{
+        return (bool)strpos($haystack, $needle, $offset);
+    }
     
     /**
      * Determine if a string contains a given substring
