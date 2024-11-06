@@ -116,7 +116,9 @@ class bArrays{
     }
 
     /**
-     *  Gets the first key of an array
+     * Gets the first key of an array
+     * @param array $array
+     * @return int|string|null
      */
     public function firstKey(array $array): int|string|null{
         return array_key_first($array);
@@ -124,11 +126,105 @@ class bArrays{
 
     /**
      * Gets the last key of an array
+     * @param array $array
+     * @return int|string|null
      */
     public function lastKey(array $array): int|string|null{
         return array_key_last($array);
     }
 
+    /**
+     * reverse an array ↑↓
+     * @param array $array
+     * @param bool $preserve_keys
+     * @return array
+     */
+    public function reverse(array $array, bool $preserve_keys = false): array{
+        return array_reverse($array, $preserve_keys);
+    }
+
+
+    /**
+     * add a new element or more at the end of the array
+     * @param array $array
+     * @param mixed ...$values
+     * @return int - array length
+     */
+    public function push(array &$array, mixed ...$values): int{
+        return array_push($array, ...$values);
+    }
+
+    /**
+     * add a new element or more at the end of the array
+     * @param array $array
+     * @param mixed ...$values
+     * @return int - array length
+     */
+    public function append(array &$array, mixed ...$values): int{
+        return array_push($array, ...$values);
+    }
+
+    /**
+     * remove the last element in the specified array
+     * Alias of array_pop
+     * @param array $array
+     * @return mixed
+     */
+    public function pop(array &$array): mixed{
+        return array_pop($array);
+    }
+
+    /**
+     * remove the last element in the specified array
+     * Alias of array_pop
+     * @param array $array
+     * @return mixed - return the removed value, null if the array is empty
+     */
+    public function removeLast(array &$array): mixed{
+        return array_pop($array);
+    }
+    
+    /**
+     * remove the first element of an array
+     * Alias of array_shift
+     * @param array $array
+     * @return mixed - the removed value or null if is empty or not an array
+     */
+    public function shift(array &$array): mixed{
+        return array_shift($array);
+    }
+
+    /**
+     * remove the first element of an array
+     * Alias of array_shift
+     * @param array $array
+     * @return mixed - the removed value or null if is empty or not an array
+     */
+    public function removeFirst(array &$array): mixed{
+        return array_shift($array);
+    }
+
+     /**
+     * Add a new element or more at the left of the array ←[a,b,c]
+     * Alias of array_ushift
+     * @param array $array
+     * @param mixed $values
+     * @return int -length of the array
+     */
+    public function unshift(array &$array, mixed ...$values): int{
+        return array_unshift($array, ...$values);
+    }
+
+    /**
+     * Add a new element or more at the left of the array ←[a,b,c]
+     * Alias of array_ushift
+     * @param array $array
+     * @param mixed $values
+     * @return int -length of the array
+     */
+    public function prepend(array &$array, mixed ...$values): int{
+        return array_unshift($array, ...$values);
+    }
 }
 
 global $bArrays;

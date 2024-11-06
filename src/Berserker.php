@@ -43,7 +43,6 @@ class Berserker{
         try{
             require_once("berserkerStatic/bStrings.php");
             require_once("berserkerStatic/bArrays.php");
-            require_once("berserkerStatic/bFilters.php");
             require_once("berserkerStatic/bRegex.php");
             require_once("berserkerStatic/bValidate.php");
             require_once("berserkerStatic/bSanitize.php");
@@ -57,7 +56,6 @@ class Berserker{
         try{
             require_once("imethod/bStrings.php");
             require_once("imethod/bArrays.php");
-            require_once("imethod/bFilters.php");
             require_once("imethod/bRegex.php");
             require_once("imethod/bValidate.php");
             require_once("imethod/bSanitize.php");
