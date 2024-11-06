@@ -31,9 +31,11 @@ class bFilters{
     }
 
     /**
-     * input filter for email
+     * sanitization for email 
+     * @param $var name of the $_POST variable(default value = email)
+     * @return mixed
      */
-    public static function input_email($var):mixed{
+    public static function input_email($var = "email"):mixed{
         $email = filter_input(INPUT_POST, $var, FILTER_SANITIZE_EMAIL);
         $email = filter_var($email,FILTER_VALIDATE_EMAIL);
         return $email;
@@ -42,7 +44,7 @@ class bFilters{
     /**
      * input filter for url
      */
-    public static function input_url($var):mixed{
+    public static function input_url($var = "url"):mixed{
         $url = filter_input(INPUT_POST, $var, FILTER_SANITIZE_URL);
         $url = filter_var($url,FILTER_VALIDATE_URL);
         if($url){
@@ -75,7 +77,7 @@ class bFilters{
      * @param string $var
      * @return mixed (string|false|null)
      */
-    public static function input_ip($var):mixed{
+    public static function input_ip($var="ip"):mixed{
         $ip = filter_input(INPUT_POST, $var, FILTER_VALIDATE_IP);
         return $ip;
     }
@@ -85,7 +87,7 @@ class bFilters{
      * @param string $var
      * @return mixed (string|false|null)
      */
-    public static function input_domain($var):mixed{
+    public static function input_domain($var = "domain"):mixed{
         $domain = filter_input(INPUT_POST, $var, FILTER_VALIDATE_DOMAIN);
         return $domain;
     }
@@ -97,7 +99,7 @@ class bFilters{
      * @param $reg the regex for a International phone
      * @return mixed (string|false|null)
      */
-    public static function input_InterPhone($var,$reg="^\+(?:[0-9\-] ?){6,14}[0-9]$"):mixed{
+    public static function input_InterPhone($var = "phone",$reg="^\+(?:[0-9\-] ?){6,14}[0-9]$"):mixed{
         $tel = filter_input(INPUT_POST, $var, FILTER_VALIDATE_REGEXP, [
             'options' => [
                 'regexp' => '/'.$reg.'/'
@@ -113,7 +115,7 @@ class bFilters{
      * @param string $reg (a regex for local phones default=^([0-9]){0,12}$ )
      * @return mixed (string|false|null)
      */
-    public static function input_localPhone($var,$reg="^([0-9]){0,12}$"):mixed{
+    public static function input_localPhone($var = "iphone",$reg="^([0-9]){0,12}$"):mixed{
         $tel = filter_input(INPUT_POST, $var, FILTER_VALIDATE_REGEXP, [
             'options' => [
                 'regexp' => '/'.$reg.'/'

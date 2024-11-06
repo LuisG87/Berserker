@@ -32,8 +32,11 @@ class bFilters{
 
     /**
      * input filter for email
+     * Only HTTP POST
+     * @param $var(default email)
+     * @return
      */
-    public function input_email($var):mixed{
+    public function input_email($var = "email"):mixed{
         $email = filter_input(INPUT_POST, $var, FILTER_SANITIZE_EMAIL);
         $email = filter_var($email,FILTER_VALIDATE_EMAIL);
         return $email;
