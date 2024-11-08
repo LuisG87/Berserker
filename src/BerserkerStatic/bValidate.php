@@ -158,6 +158,42 @@ class bValidate{
     }
 
     /**
+    * validate a date
+    * @param string
+    * @param string
+    * @return bool true case is a date, false if not
+    */
+    public static function date(string $type="post",string $var):string|bool{
+        switch($type){
+            case "post":
+                    //http post
+                    $is_date = (bool)strtotime($_POST[$var]);
+                    if ($is_date === false){
+                        return false;
+                    }
+                    return $_POST[$var];
+                break;
+            case "get":
+                    //http get
+                    $is_date = (bool)strtotime($_GET[$var]);
+                    if ($is_date === false){
+                        return false;
+                    }
+                    return $_GET[$var];
+                break;
+            case "cookie":
+                    //for cookies
+                    $is_date = (bool)strtotime($_COOKIE[$var]);
+                    if ($is_date === false){
+                        return false;
+                    }
+                    return $_COOKIE[$var];
+                break;
+        }
+        return false;
+    }
+
+    /**
      * berserker input decider
      */
     private function decideType(string $type):int{

@@ -225,6 +225,98 @@ class bArrays{
     public function prepend(array &$array, mixed ...$values): int{
         return array_unshift($array, ...$values);
     }
+
+    /**
+     * get all the values in the array as an array
+     * alias of array_values
+     * @param array $array
+     * @return array
+     */
+    public function values(array $array): array{
+        return array_values($array);
+    }
+
+    /**
+     *  Removes duplicate values from an array
+     * alias of array_unique
+     * @param array $array
+     * @param int $flags posible values(SORT_REGULAR|SORT_NUMERIC|SORT_STRING|SORT_LOCALE_STRING)
+     * @return array
+     */
+    public function unique(array $array, int $flags = SORT_STRING): array{
+        return array_unique($array, $flags);
+    }
+
+    /**
+     * Give back the  length of the array
+     * alias of count
+     * @param Countable|array $value
+     * @param int $mode
+     * @return int
+     */
+    public function length(Countable|array $value, int $mode = COUNT_NORMAL): int{
+        return count($value, $mode);
+    }
+    
+    /**
+     * Calculate the sum of values in an array - please use it on arrays that has values
+     * alias of array_sum 
+     * @param array $array
+     * @return int|float
+     */
+    public function sumValues(array $array): int|float{
+        return array_sum($array);
+    }
+
+    /**
+     * Searches the array for a given value and returns the first corresponding key if successful
+     * alias of array_search
+     * @param mixed $needle
+     * @param array $haystack
+     * @param bool $strict
+     * @return int|string|false will return false if no value found
+     */
+    public function search(mixed $needle, array $haystack, bool $strict = false): int|string|false{
+        return array_search($needle, $haystack, $strict);
+    }
+
+    /**
+     * Create array containing variables and their values
+     * alias of compact
+     * @param array|string $var_name
+     * @param array|string ...$var_names
+     * @return array
+     */
+    public function makeFrom(array|string $var_name, array|string ...$var_names): array{
+        return compact($var_name, ...$var_names);
+    }
+
+
+    /**
+     * Extract a slice of the array
+     * alias of array_slice
+     * @param array $array,
+     * @param int $offset,
+     * @param ?int $length = null,
+     * @param bool $preserve_keys = false
+     * @return array
+     */
+    public function slice(array $array, int $offset, ?int $length = null, bool $preserve_keys = false): array{
+        return array_slice($array, $offset, $length, $preserve_keys);
+    }
+
+    /**
+     * Extract a slice of the array
+     * alias of array_slice, and slice method.
+     * @param array $array,
+     * @param int $offset,
+     * @param ?int $length = null,
+     * @param bool $preserve_keys = false
+     * @return array
+     */
+    public function portion(array $array, int $offset, ?int $length = null, bool $preserve_keys = false): array{
+        return array_slice($array, $offset, $length, $preserve_keys);
+    }
 }
 
 global $bArrays;

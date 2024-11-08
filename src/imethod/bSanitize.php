@@ -90,3 +90,6 @@ class bSanitize{
         return htmlspecialchars($var);
     }
 }
+
+global $bSanitize;
+$bSanitize = new bSanitize();
