@@ -8,12 +8,12 @@ class bValidate{
     
     /**
      * classic is just an alias of the native filter_input function
-     * @param string $type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
      * @param int $filter check in php page the filter constants
      * @param array|int $options
+     * @param string $type - posible values (post|get|env|server|cookie)
      */
-    public static function classic(string $type="post", string $var, int $filter,array|int $option):mixed{
+    public static function classic(string $var, int $filter, array|int $option, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, $filter,$option);
         return $var;
     }
@@ -25,7 +25,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null)
      */
-    public static function integer(string $type="post",$var):mixed{
+    public static function integer(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_INT);
         return $var;
     }
@@ -37,7 +37,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null)
      */
-    public static function address(string $type="post",$var):mixed{
+    public static function address(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_REGEXP,[
             'options'=>[
                 'regex'=> '/^[a-zA-Z0-9 ]+$/'
@@ -85,7 +85,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed (string|false|null)
      */
-    public static function bool(string $type="post",string $var):mixed{
+    public static function bool(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_BOOL);
         return $var;
     }
@@ -96,7 +96,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null)
      */
-    public static function float(string $type="post",$var):mixed{
+    public static function float(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_FLOAT);
         return $var;
     }
@@ -107,7 +107,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null) 
      */
-    public static function email(string $type="post",$var):mixed{
+    public static function email(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_EMAIL);
         return $var;
     }
@@ -118,7 +118,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null)
      */
-    public static function ip(string $type="post",$var):mixed{
+    public static function ip(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_IP);
         return $var;
     }
@@ -129,7 +129,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null) 
      */
-    public static function domain(string $type="post",$var):mixed{
+    public static function domain(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_DOMAIN);
         return $var;
     }
@@ -140,7 +140,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null) 
      */
-    public static function url(string $type="post",$var):mixed{
+    public static function url(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_URL);
         return $var;
     }
@@ -152,7 +152,7 @@ class bValidate{
      * @param string $var name of variable
      * @return mixed  (string|false|null) 
      */
-    public static function mac(string $type="post",$var):mixed{
+    public static function mac(string $var, string $type="post"):mixed{
         $var = filter_input(self::decideType($type), $var, FILTER_VALIDATE_MAC);
         return $var;
     }
@@ -163,7 +163,7 @@ class bValidate{
     * @param string
     * @return bool true case is a date, false if not
     */
-    public static function date(string $type="post",string $var):string|bool{
+    public static function date(string $var, string $type="post"):string|bool{
         switch($type){
             case "post":
                     //http post

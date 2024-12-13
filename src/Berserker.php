@@ -46,6 +46,7 @@ class Berserker{
             require_once("berserkerStatic/bRegex.php");
             require_once("berserkerStatic/bValidate.php");
             require_once("berserkerStatic/bSanitize.php");
+            require_once("berserkerStatic/bBuffer.php");
             return "static_loaded";
         }catch(\Exception $e){
             return "error_static_load";
@@ -59,6 +60,7 @@ class Berserker{
             require_once("imethod/bRegex.php");
             require_once("imethod/bValidate.php");
             require_once("imethod/bSanitize.php");
+            require_once("imethod/bBuffer.php");
             return "imethod_loaded";
         }catch(\Exception $e){
             return "error_imethod_load";

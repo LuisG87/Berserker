@@ -267,11 +267,26 @@ class bStrings{
     
     /**
      * Output one or more strings
+     * alias of echo
      * @param string ...$expresion
      * @return void
      */
     public function echo(string ...$expressions): void{
-        echo($expressions);
+        foreach ($expressions as $expression) {
+            echo $expression; 
+        }
+    }
+
+    /**
+     * Output one or more strings
+     * alias of echo
+     * @param string ...$expresion
+     * @return void
+     */
+    public function render(string ...$expressions): void{
+        foreach ($expressions as $expression) {
+            echo $expression; 
+        }
     }
 
     /**

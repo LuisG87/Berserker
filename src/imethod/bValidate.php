@@ -8,12 +8,12 @@ class bValidate{
     
     /**
      * classic is just an alias of the native filter_input function
-     * @param string $type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
      * @param int $filter check in php page the filter constants
      * @param array|int $options
+     * @param string $type - posible values (post|get|env|server|cookie)
      */
-    public function classic(string $type="post", string $var, int $filter,array|int $option):mixed{
+    public function classic(string $var, int $filter,array|int $option, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, $filter,$option);
         return $var;
     }
@@ -21,11 +21,11 @@ class bValidate{
     /**
      * Validation for integers
      * this method secures that you are reciving an integer from an input
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null)
      */
-    public function integer(string $type="post",$var):mixed{
+    public function integer(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_INT);
         return $var;
     }
@@ -33,11 +33,11 @@ class bValidate{
     /**
      * a validation for addresses
      * this method secures that you are reciving an address from an input
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null)
      */
-    public function address(string $type="post",$var):mixed{
+    public function address(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_REGEXP,[
             'options'=>[
                 'regex'=> '/^[a-zA-Z0-9 ]+$/'
@@ -81,66 +81,66 @@ class bValidate{
 
     /**
      * validate for boolean
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed (string|false|null)
      */
-    public function bool(string $type="post",string $var):mixed{
+    public function bool(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_BOOL);
         return $var;
     }
 
     /**
      * validate for float values
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null)
      */
-    public function float(string $type="post",$var):mixed{
+    public function float(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_FLOAT);
         return $var;
     }
 
     /**
      * validate for emails
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null) 
      */
-    public function email(string $type="post",$var):mixed{
+    public function email(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_EMAIL);
         return $var;
     }
 
     /**
      * validate ip if necesessary
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null)
      */
-    public function ip(string $type="post",$var):mixed{
+    public function ip(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_IP);
         return $var;
     }
 
     /**
      * validate a domain
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null) 
      */
-    public function domain(string $type="post",$var):mixed{
+    public function domain(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_DOMAIN);
         return $var;
     }
 
     /**
      * validate url
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null) 
      */
-    public function url(string $type="post",$var):mixed{
+    public function url(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_URL);
         return $var;
     }
@@ -148,22 +148,22 @@ class bValidate{
 
     /**
      * validate a mac
-     * @param string type - posible values (post|get|env|server|cookie)
      * @param string $var name of variable
+     * @param string type - posible values (post|get|env|server|cookie)
      * @return mixed  (string|false|null) 
      */
-    public function mac(string $type="post",$var):mixed{
+    public function mac(string $var, string $type="post"):mixed{
         $var = filter_input($this->decideType($type), $var, FILTER_VALIDATE_MAC);
         return $var;
     }
 
-        /**
+    /**
     * validate a date
     * @param string
     * @param string
     * @return bool true case is a date, false if not
     */
-    public function date(string $type="post",string $var):string|bool{
+    public function date(string $var, string $type="post"):string|bool{
         switch($type){
             case "post":
                     //http post
