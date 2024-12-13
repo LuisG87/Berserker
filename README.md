@@ -7,7 +7,7 @@
 <p>This is a test repository for PHP classes, which will act as an interface with array functions, string functions, and filter functions.</p>
 <a href="https://blastcoding.com/en/php-berserker/">berserker Doc -blastcoding.com</a>
 
-<p><strong>Version 1.0.1-Alpha is the version supporting Composer use</strong></p>
+<p><strong>use latest Version 1.1.2-Alpha</strong></p>
 <pre>
 require 'vendor/autoload.php';
 use Berserker\Berserker;
